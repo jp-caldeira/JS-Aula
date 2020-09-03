@@ -76,3 +76,35 @@ var student = {
 for (var key in student){
   console.log(student[key]);
   }
+
+
+  var carro = {
+      cor: "vermelho",
+      placa: "XPTO-4342",
+      ano: 2017,
+      marca: "Volskwagen",
+      ligar: function(){
+        console.log("Carro ligado");    
+      },
+      desligar: function(){
+        console.log("Carro desligado");
+      }
+  }
+
+  console.log(carro.marca);
+
+  carro.ligar();
+  carro.desligar();
+
+  // for (var prop in carro){
+  //   console.log(prop);
+  // }
+ 
+ 
+  for (var prop in carro){
+    console.log(prop + ": " + carro[prop]);
+  }
+
+  
+
+  
