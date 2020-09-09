@@ -1,29 +1,57 @@
-console.log('Arquivo externo do javascript');
+
+//Voltando um pouco aqui
 
 //variaveis
-var aluno = "João";
+let variavel = 'valor';
 
-var idade = 33;
+//constantes (php -- define('constante', 'valor'))
+const constante = "valor";
 
-var aprovado = true;
+//funções function nomedafuncao()
+function myFunc(arg1, arg2){
+  return true;
+}
+
+//array
+let lista = [
+  "banana",
+  "maçã",
+  "arroz"
+];
+
+//objeto literal (tipo array associativo)
+
+let objeto = {
+      "chave": "valor"
+  }
+
+
+console.log('Arquivo externo do javascript');
+
+//letiaveis
+let aluno = "João";
+
+let idade = 33;
+
+let aprovado = true;
 
 console.log(aluno);
 console.log(idade);
 console.log(aprovado);
 
-var alunos = ["João", "Gabi", "Maria"];
+let alunos = ["João", "Gabi", "Maria"];
 console.log(alunos);
 alunos.push("Edu");
 console.log(alunos);
-var ultimoAluno = alunos.pop();
+let ultimoAluno = alunos.pop();
 console.log(alunos);
 console.log("Último aluno é: " + ultimoAluno);
 
 //objetos
 
-var aluno2 = {};
+let aluno2 = {};
 
-var aluno2 = {
+let aluno2 = {
       "nome": "João",
       "idade": 33,
       "nota": 5
@@ -63,7 +91,7 @@ console.log(aluno2.idade >= 18 ? aluno2.nome + " é maior de idade" : aluno2.nom
 
 //objetos
 
-var student = {
+let student = {
     name: "Juana",
     lastName: "Heinz",
     fullName: function(){
@@ -73,18 +101,18 @@ var student = {
 
 //console.log(student.fullName());
 
-for (var key in student){
+for (let key in student){
   console.log(student[key]);
   }
 
 
-  var carro = {
+  let carro = {
       cor: "vermelho",
       placa: "XPTO-4342",
       ano: 2017,
       marca: "Volskwagen",
       ligar: function(){
-        console.log("Carro ligado");    
+        console.log("Carro ligado");
       },
       desligar: function(){
         console.log("Carro desligado");
@@ -96,15 +124,10 @@ for (var key in student){
   carro.ligar();
   carro.desligar();
 
-  // for (var prop in carro){
+  // for (let prop in carro){
   //   console.log(prop);
   // }
- 
- 
-  for (var prop in carro){
+
+  for (let prop in carro){
     console.log(prop + ": " + carro[prop]);
   }
-
-  
-
-  

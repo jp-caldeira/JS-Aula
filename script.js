@@ -1,18 +1,18 @@
-var titulo = document.querySelector("h1");
+let titulo = document.querySelector("h1");
 
 //titulo.textContent = "olá seja bem-vindo";
 
-var itens = document.querySelectorAll("li");
+let itens = document.querySelectorAll("li");
 
-var containerClass = document.getElementsByClassName("container");
+let containerClass = document.getElementsByClassName("container");
 
-var meuTitulo = document.getElementById("tituloPrincipal");
+let meuTitulo = document.getElementById("tituloPrincipal");
 
 meuTitulo.style.color = "olive";
 
 meuTitulo.style.fontFamily = "cursive";
 
-var meuBotao = document.querySelector(".btn-ver-mais");
+let meuBotao = document.querySelector(".btn-ver-mais");
 
 meuBotao.style.backgroundColor = "green";
 
@@ -29,5 +29,8 @@ meuBotao.getAttribute("title");//retorna null
 meuBotao.removeAttribute("id");
 
 //verificando a existência de um atributo ---> hasAttribute() ----> retorna booleano
-meuBotao.hasAttribute("id");
-
+if (meuBotao.hasAttribute("id")){
+  console.log("tem id");
+} else {
+  console.log("não tem id");
+}
