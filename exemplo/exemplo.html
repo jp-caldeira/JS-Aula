@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo - Eventos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    
+    
+    <div class="container jumbotron">
+            <p>JAVASCRIPT - eventos</p>
+
+            <button class="btn btn-primary botao-1">Botão 1</button>
+
+            <button class="btn btn-warning botao-2">Botão 2</button>
+  </div>
+
+  
+  <script type="text/javascript">
+    window.onload = function (){
+        console.log(document.querySelector('p'));    
+    }
+    
+    let botao1 = document.querySelector('.botao-1');
+    let botao2 = document.querySelector('.botao-2');
+    
+    botao1.onclick = function () {
+        console.log("CLICK");
+    }
+
+    botao2.onmouseover = function (){
+        console.log("passou botão 2");
+    }
+
+</script> 
+    
+</body>
+</html>

@@ -1,0 +1,13 @@
+#alerta-2 {
+    display: none;
+}
+
+.show {
+    display: block !important;
+    animation: show 1s linear 0s;
+}
+  
+  @keyframes show {
+    from   {opacity:0;}
+    to  {opacity:1;}
+  }

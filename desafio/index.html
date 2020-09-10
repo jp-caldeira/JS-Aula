@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <title>INTRODUÇÃO JS</title>=
+</head>
+<body>
+    <div class="container">
+        <!-- Mensagem botão clicado com sucesso -->
+        <h2 class="pt-5">Exercício 1:</h2>
+        <p>
+             Aparecer alerta
+        </p>
+        <div id="alerta-1" class="alert alert-success" onclick="desapareceComOAlerta()" style="display: none;" role="alert">
+            Botão clicado com sucesso!
+        </div>
+        <div>
+            <button class="btn btn-success" onclick="mostrarAlerta(event)">Alerta!</button>
+        </div>
+
+        <!-- Mensagem botão por classe e desaparecer Alerta -->
+        <h2 class="pt-5">Exercício 2:</h2>
+        <p>
+            Adicionar a classe "show" ao alerta.
+        </p>
+        <div id="alerta-2" class="alert alert-success" role="alert" onclick="desapareceComOAlerta()">
+            Botao clicado com sucesso!
+        </div>
+        <div>
+            <button class="btn btn-success" onclick="mostrarAlertaComShow()">Alerta bonitinho!</button>
+        </div>
+        
+        <!-- Calculadora -->
+        <div class="card mt-4">
+            <div class="card-header"><h1 class="card-title">Calculadora</h1></div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="form-group col-12">
+                        <input id="primeiro_valor" class="form-control" placeholder="digite um valor..." />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group col-12">
+                        <input id="segundo_valor" class="form-control" placeholder="digite um valor..." />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col"><button class="btn btn-primary btn-block" onclick="adicionar()">Adicionar</button></div>
+                    <div class="col"><button class="btn btn-primary btn-block" onclick="subtrair()">Subtrair</button></div>
+                    <div class="col"><button class="btn btn-primary btn-block" onclick="multiplicar()">Multiplicar</button></div>
+                    <div class="col"><button class="btn btn-primary btn-block" onclick="dividir()">Dividir</button></div>
+                    <div class="col"><button class="btn btn-primary btn-block" onclick="elevar()">Elevar</button></div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <h4>Resultado: </h2> <h1 id="resultado" style="font-weight: bold;">N/D</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
