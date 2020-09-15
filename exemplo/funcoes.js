@@ -1,7 +1,7 @@
 //função é um bloco de código atribuído para executar uma tarefa
 
 function produto (n1, n2){
-    return n1 * n2;//usar sempre RETURN 
+    return n1 * n2;//usar sempre RETURN
 }
 
 //executando:

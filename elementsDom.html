@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Criando elementos no Dom</title>
+  </head>
+
+  <body>
+
+    <div class="container">
+      <button class="btn btn-primary botao-1">Botão 1</button>
+      <button class="btn btn-warning botao-2">Botão 2</button>
+      <a href="https://google.com">Clique aqui</a>
+
+      <div id="minhaDiv">
+        <h3 class="titulos-artigos">Meus artigos</h3>
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      let botao1 = document.querySelector('.botao-1');
+      let botao2 = document.querySelector('.botao-2');
+      let botao3 = document.querySelector('a');
+
+      let minhaDiv = document.querySelector("#minhaDiv");
+
+      let titulo = document.createElement('h1');
+
+      let texto = document.createTextNode('Este é meu título');
+
+      botao1.onclick = function () {
+        titulo.appendChild(texto);
+        minhaDiv.appendChild(titulo);
+      }
+
+//preventDefault()
+      botao3.onclick = function(event){
+        alert('clicou em mim!');
+        event.preventDefault();
+      }
+
+
+
+      let titulo3 = document.querySelector('h3');
+
+      titulo3.classList.add('display-4');
+
+      //titulo3.classList.remove('display-4');
+
+      botao2.onclick = function(){
+        titulo3.classList.toggle('display-4');
+      }
+
+
+
+      console.log(titulo3.classList);
+
+
+
+
+
+
+    </script>
+
+  </body>
+
+</html>

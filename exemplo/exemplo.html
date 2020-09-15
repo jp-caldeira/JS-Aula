@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="estilo.css">
 </head>
 <body>
-    
-    
+
+
     <div class="container jumbotron">
             <p>JAVASCRIPT - eventos</p>
 
@@ -18,24 +18,35 @@
             <button class="btn btn-warning botao-2">Botão 2</button>
   </div>
 
-  
+
   <script type="text/javascript">
     window.onload = function (){
-        console.log(document.querySelector('p'));    
+        console.log(document.querySelector('p'));
     }
-    
+
     let botao1 = document.querySelector('.botao-1');
     let botao2 = document.querySelector('.botao-2');
-    
+
     botao1.onclick = function () {
-        console.log("CLICK");
+        console.log("Click no botão 1");
+    }
+
+    botao1.onmouseover = function(){
+      console.log("passou pelo botão1");
+    }
+
+
+    botao2.onclick = function(){
+      console.log("clicou botão 2");
     }
 
     botao2.onmouseover = function (){
         console.log("passou botão 2");
     }
 
-</script> 
-    
+
+
+</script>
+
 </body>
 </html>
