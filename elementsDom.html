@@ -11,6 +11,7 @@
     <div class="container">
       <button class="btn btn-primary botao-1">Botão 1</button>
       <button class="btn btn-warning botao-2">Botão 2</button>
+      <button class="btn btn-warning botao-3">Botão 3</button>
       <a href="https://google.com">Clique aqui</a>
 
       <div id="minhaDiv">
@@ -18,10 +19,12 @@
       </div>
     </div>
 
+
+
     <script type="text/javascript">
       let botao1 = document.querySelector('.botao-1');
       let botao2 = document.querySelector('.botao-2');
-      let botao3 = document.querySelector('a');
+      let botao3 = document.querySelector('.botao-3');
 
       let minhaDiv = document.querySelector("#minhaDiv");
 
@@ -35,12 +38,10 @@
       }
 
 //preventDefault()
-      botao3.onclick = function(event){
-        alert('clicou em mim!');
+      botao3.ondblclick = function(event){
+        alert('para com isso!');
         event.preventDefault();
       }
-
-
 
       let titulo3 = document.querySelector('h3');
 
@@ -52,13 +53,30 @@
         titulo3.classList.toggle('display-4');
       }
 
-
-
       console.log(titulo3.classList);
 
+      var seg = 1;
+      var contador = setInterval(function(){
+        console.log(seg);
+        seg++;
+      }, 1000);
 
+      botao3.onclick = function(){
+        clearInterval(contador);
+        console.log('Contador foi parado');
+      }
 
+      var myTimeout = setTimeout(areYouThere, 3000);
 
+      function areYouThere(){
+        alert('are you there, bro?');
+      }
+
+      var myInterval = setInterval(everySecond, 60000);
+
+      function everySecond(){
+        alert('olá como vai você?');
+      }
 
 
     </script>

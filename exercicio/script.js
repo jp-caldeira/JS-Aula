@@ -1,3 +1,7 @@
+//console.log
+
+
+
 let filmes = [
     'Vingadores',
     'Akira',
@@ -15,3 +19,4 @@ for (let i = filmes.length -1 ; i >= 0 ; i--) {
 // array_invertido = filmes.reverse();
 console.log("LISTA ARRAY INVERTIDO: \n", array_invertido, filmes);
 
+///

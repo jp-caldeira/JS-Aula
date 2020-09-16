@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <div class="container">
+        <div class="corpo">
+            <div class="no"></div>
+            <div class="no"></div>
+            <div class="no"></div>
+            <div class="no"></div>
+        </div>
+    </div>
+    <button type="button" id="start" name="button">Iniciar</button>
+    <button type="button" id="restart" name="button">Reiniciar</button>
+    <button type="button" id="down" name="button">Para baixo</button>
+
+    <script src="script.js"></script>
+    <script>
+
+// let cobra = [
+//     {
+//       x: 4
+//       y: 4
+//       no: document.getElementsByClassName('no').item(0);
+//     },
+//     {
+//       x: 5
+//       y: 7
+//       no: document.getElementsByClassName('no').item(2);
+//     },
+//     }
+//     x: 6
+//     y: 7
+//     no: document.getElementsByClassName('no').item(3);
+//   },
+//   }
+//   x: 7
+//   y: 7
+//   no: document.getElementsByClassName('no').item(4);
+// }
+// ]
+
+
+
+    let botaoStart = document.getElementById("start");
+    let botaoRestart = document.getElementById("restart");
+    let botaoDown = document.getElementById("down");
+
+    let no1 = document.getElementsByClassName('no').item(0);
+    let no2 = document.getElementsByClassName('no').item(1);
+    let no3 = document.getElementsByClassName('no').item(2);
+    let no4 = document.getElementsByClassName('no').item(3);
+
+        let x = 1;
+        let x2 = 2;
+        let x3 = 3;
+        let x4 = 4;
+        let y = 4;
+        let y2 = 4;
+        let y3 = 4;
+        let y4 = 4;
+
+        posicionar(no1, x, y);
+        posicionar(no2, x2, y2);
+        posicionar(no3, x3, y3);
+        posicionar(no4, x4, y4);
+
+
+function mover(){
+  posicionar(no1, x++, y);
+  posicionar(no2, x2++, y2);
+  posicionar(no3, x3++, y3);
+  posicionar(no4, x4++, y4);
+}
+
+function paraBaixo(){
+  if (y4 === y3){
+  posicionar(no4, x4, y4++);
+  posicionar(no3, x3++, y3);
+  posicionar(no2, x2++, y2);
+  posicionar(no1, x++, y);
+} else if(y3 === y2) {
+  posicionar(no4, x4, y4++);
+  posicionar(no3, x3, y3++);
+  posicionar(no2, x2++, y2);
+  posicionar(no1, x++, y);
+} else if (y2 === y){
+  posicionar(no4, x4, y4++);
+  posicionar(no3, x3, y3++);
+  posicionar(no2, x2, y2++);
+  posicionar(no1, x++, y);
+} else {
+  posicionar(no4, x4, y4++);
+  posicionar(no3, x3, y3++);
+  posicionar(no2, x2, y2++);
+  posicionar(no1, x, y++);
+}
+}
+
+
+var começar;
+var baixo;
+
+botaoStart.onclick = function (){
+    começar = setInterval(mover, 1000);
+}
+
+function moverBaixo(){
+  clearInterval(começar);
+  let y2 = 4;
+  let y3 = 4;
+  let y4 = 5;
+  baixo = setInterval(paraBaixo, 1000);
+}
+
+
+botaoDown.onclick = moverBaixo;
+
+function reiniciar (){
+  clearInterval(começar);
+  clearInterval(baixo);
+  x = 1;
+  x2 = 2;
+  x3 = 3;
+  x4 = 4;
+  y = 4;
+  y2 = 4;
+  y3 = 4;
+  y4 = 4;
+  posicionar(no1, x, y);
+  posicionar(no2, x2, y);
+  posicionar(no3, x3, y);
+  posicionar(no4, x4, y);
+}
+
+botaoRestart.onclick = reiniciar;
+
+document.body.onkeypress = function(event){
+  if (event.key === "w"){
+    começar = setInterval(mover, 1000);
+} else if(event.key === 'n') {
+    reiniciar();
+} else if (event.key === 's'){
+  moverBaixo();
+
+}
+}
+
+
+
+
+    </script>
+</body>
+</html>
