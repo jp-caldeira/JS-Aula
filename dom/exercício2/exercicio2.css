@@ -1,0 +1,37 @@
+body {
+  background-color: #260887;
+  font-family: Arial;
+  padding: 40px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.search-container {
+  display: flex;
+  justify-content: space-around;
+}
+
+#search-bar {
+  width: 80%;
+  height: 40px;
+  font-size: 30px;
+}
+
+.adventures-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  margin: 50px;
+}
+
+.adventure {
+  width: 100px;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 15px;
+  text-align: center;
+  background-color: white;
+}
