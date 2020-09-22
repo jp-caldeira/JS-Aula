@@ -16,17 +16,26 @@
   </head>
   <body>
     <h1>Faça seu cadastro</h1>
-    <form class="" action="" method="">
-      Nome: <input type="text" id="nome" value=""></input><br>
-      CEP: <input type="number" id="CEP" value=""></input><br>
-      Rua: <input type="text" id="rua" value=""></input><br>
-      Número: <input type="number" id="numeroCasa" name="" value=""></input><br>
-      Bairro: <input type="text" id="bairro" name="" value=""></input><br>
-      Cidade: <input type="text" id="cidade" name="" value=""></input><br>
-      Estado: <input type="text" id="estado" name="" value=""></input><br>
+
+    <div id="error-list" class="" style="background-color:red" hidden>
+            <ul>
+
+            </ul>
+
+    </div>
+
+    <form id="form1" class="meuForm" action="" method="">
+      Nome: <input type="text" name="nome" id="nome" value=""></input><br><br>
+      CEP: <input type="number" id="CEP" value=""></input><br><br>
+      Rua: <input type="text" id="rua" value=""></input><br><br>
+      Número: <input type="number" id="numeroCasa" name="" value=""></input><br><br>
+      Bairro: <input type="text" id="bairro" name="" value=""></input><br><br>
+      Cidade: <input type="text" id="cidade" name="" value=""></input><br><br>
+      Estado: <input type="text" id="estado" name="" value=""></input><br><br>
+      Mensagem: <br><textarea name="mensagem" id="mensagem" rows="5" cols="100"></textarea>
       <button type="submit" name="button">Enviar</button>
     </form>
 
-<script src="form-script.js" ></script>
+<script src="form-script.js"></script>
   </body>
 </html>
