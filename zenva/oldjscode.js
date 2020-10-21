@@ -192,3 +192,38 @@ levels[2].push(3.3);
 console.log(levels);
 
 console.log(levels[2][2]);
+
+///if else etc///
+
+if(test condition){
+  //código a ser executado se a condição for verdadeira//
+}
+
+var keyPressed = 'l';
+var xPos = 0;
+let endPos = 5;
+let beginPos = 0;
+
+if (keyPressed == "l"){
+} else if (keyPressed == 'r'){
+  xPos -= 1;
+} else {
+  xPos = 0;
+}
+
+///outro;
+if (keyPressed == "l"){
+  if(xPos < endPos){
+      xPos += 1;
+    }
+} else if (keyPressed == 'r'){
+  if(xPos > beginPos){
+  xPos -= 1;
+}
+}
+
+if (keyPressed == "l" && xPos < endPos){
+    xPos += 1;
+} else if (keyPressed == 'r' && xPos > beginPos){
+  xPos -= 1;
+}

@@ -24,14 +24,33 @@ nested(); // dá erro - a função só pode ser acessada dentro do escopo da out
 
 function healing(amount){
   currentHealth += amount;
+  console.log(`Agora currentHealth é ${currentHealth}`);
 }
 
 healing(10);//agora currentHealth é 70;
-console.log(currentHealth); // 70;
 
 function healin10(amount = 10){
     currentHealth += amount;
 }
 
 healin10(); // aumenta automaticamente o currentHealth em 10;
-healin10(5); //agora aumenta em cinco. o parâmetro é opcional porque já foi declarado anteriormente na função
+healin10(5); //agora aumenta em cinco. o valor do parâmetro é opcional porque já foi anteriormente na função
+
+///RETURN///
+
+var maxHealth = 100;
+
+
+function calcPercent(dividendo, divisor){
+  return (dividendo / divisor) * 100;
+}
+
+function functionName(healAmount = 10) {
+
+  var newHealth = currentHealth + healAmount;
+
+  currentHealth = newHealth > maxHealth ? maxHealth : newHealth;
+
+  return calcHealth(currentHealth, maxHealth);
+
+}
