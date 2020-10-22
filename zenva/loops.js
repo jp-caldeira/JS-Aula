@@ -92,3 +92,35 @@ meuArray = ["abobrinha", "chocolate", "amendôas", "chinelos"];
 for (var i = 0; i < meuArray.length; i++){
       console.log(meuArray[i]);
 }
+
+var items = ["axe", "shirt", "knife"];
+var finalString = "In my inventory I have: ";
+
+for (var i = 0; i < items.length; i++){
+  var itemName = items[i];
+  finalString += itemName + " ";  
+}
+
+console.log(finalString);
+
+finalString = finalString.slice(0, finalString.length - 1);
+
+finalString += ".";
+
+console.log(finalString);
+
+///FOREACH 
+
+meuArray.forEach(function(element){
+  finalString += element + " ";
+});
+
+array.forEach(element => {
+  
+});
+
+function logElements(element, index, array){
+  console.log("a[" + index + "] = " + element);
+}
+
+[10, 25, 67].forEach(logElements);
