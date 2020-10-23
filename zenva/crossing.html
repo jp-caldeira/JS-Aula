@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Crossing</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <h1>Crossing game</h1>
+
+        <canvas id="myCanvas" width="1000" height="500"></canvas>
+
+
+
+    <script type="text/javascript">
+
+    var canvas = document.getElementById('myCanvas');
+
+    var context = canvas.getContext('2d');
+
+    //desenhando uma linha
+    context.moveTo(200,0);
+    context.lineTo(1000,500);
+    context.stroke();
+    //retângulo
+    context.clearRect(0, 0, 1500, 500);//limpa tudo
+    context.fillStyle = "blue";//define cor
+    context.fillRect(100, 200, 250, 200); //define posição e tamanho
+
+
+    let screenWidth = 1000;
+    let screenHeight = 500;
+
+    class gameCharacter {
+      constructor(x, y, width, height, color, speed){
+        this.xPos = x;
+        this.yPos = y;
+        this.width = width;
+        this.height = height;
+        this.color = color;
+        this.speed = speed;
+        }
+
+        moveVert(){
+          if (this.yPos > screenHeight - 100){
+              this.speed = -this.speed;
+              }
+          }
+          
+          this.yPos += this.speed;
+
+        }
+
+        moveX(){
+          if (this.xPos > screenWidth - 100){
+            this.speed = -this.speed;
+          }
+          this.xPos += this.speed;
+        }
+    }
+
+    var rectangle = new gameCharacter(50, 50, 50, 50, "rgb(0, 0, 255)", 2);
+
+    var rectArray = [
+        new gameCharacter(350, 150, 50, 50, "rgb(0, 0, 255)", 2),
+        new gameCharacter(475, 200, 50, 50, "rgb(0, 0, 255)", 2),
+        new gameCharacter(900, 420, 50, 50, "rgb(0, 0, 255)", 2)
+    ];
+
+    var draw = function() {
+        context.clearRect(0, 0, screenWidth, screenHeight);
+
+         context.fillStyle = rectangle.color;
+         context.fillRect(rectangle.xPos, rectangle.yPos, rectangle.width, rectangle.height);
+
+        rectArray.forEach(function(element){
+          context.fillStyle = element.color;
+          context.fillRect(element.xPos, element.yPos, element.width, element.height);
+    });
+  }
+
+  var update = function(){
+        rectangle.moveVert();
+  }
+
+
+    var step = function(){
+        //qualquer atualização necessário no quadro
+        update();
+        draw();
+        window.requestAnimationFrame(step);
+    }
+
+step();
+
+
+    </script>
+
+  </body>
+</html>

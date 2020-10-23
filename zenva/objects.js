@@ -26,7 +26,7 @@ console.log(`Agora sua posição é ${personagem.xPos}`);
 //adicionando atributos e funções
 personagem.yPos = 0;
 
-//alterando função  
+//alterando função
 personagem.move = function(x, y){
     this.xPos += x;
     this.yPos += y;
@@ -44,7 +44,7 @@ console.log(personagem.nome);//agora nome é ananias
 var person2 = {
         nome: "Aldo",
         class: "Humano",
-        health: 100;
+        health: 100,
         get title(){
             return this.nome + " o " + this.class;
         },
@@ -61,6 +61,39 @@ var person2 = {
 person2.title;//acessar como uma propriedade e não função
 ///SETTER
 person2.maxHealth = 150;
+
+//outras maneiras de criar getter e setters após criar um objeto
+
+Object.defineProperty(variavel, 'nomeDoGetter', {
+    get: function() {
+      ////
+    },
+});
+
+Object.defineProperty(person2, "saúde", {
+  get: function(){
+    return "Health: " + health;
+  }
+});
+
+///define setters
+
+var o = {};
+o.__defineSetter__('value', function(val) { this.anotherValue = val; });
+o.value = 5;
+console.log(o.value); // undefined
+console.log(o.anotherValue); // 5
+
+//define GETTER
+
+var person3 = {
+      nome: "Anderson",
+      health: 100,
+      dinheiro: 0,
+};
+
+person3.__defineGetter__("showMeTheMoney", function(){ return this.dinheiro; });
+
 
 /////////////OBJECT FUNCTIONS
 
@@ -90,12 +123,35 @@ console.log(aldaberto.health);
 
 //pra adicionar propriedades idem:
 aldaberto.sagacidade = 1000; //mas só o aldaberto tem sagacidade, neste exemplo
-aldaberto.maxSagaz = function(x){ 
+aldaberto.maxSagaz = function(x){
     this.sagacidade += x;
 }
 
+////object prototype - definindo uma nova propriedade ao constructor
+var gc1 = new gameCharacter("Joao", 0, 100);
+gc1.yPos = 5; //só o gc1 tem a propriedade yPos
 
+var gc2 = new gameCharacter("Robson", 0, 100);
+gc2.yPos;//undefined -- a propriedade não existe neste objeto
 
+gameCharacter.prototype.yPos = 5; //agora todos os objetos criados com o construtor terão a propriedade
 
+//também com funções
 
+var heal = function(amount){
+   this.health += amount;
+   return "Now health is " + this.health;
+}
 
+gameCharacter.prototype.heal = heal;
+
+gc2.heal(10); /// "Now health is 110";
+
+//dá pra assinalar a função direto também:
+
+gameCharacter.prototype.moveY = function(y) {
+   this.yPos += y;
+}
+
+gc2.moveY(5);
+gc2.yPos; // 10;

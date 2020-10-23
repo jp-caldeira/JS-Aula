@@ -33,7 +33,7 @@ myArray.forEach(function(numero){
 //2
 //3
 
-//map() - recebe callback como parâmetro e devolve um novo array_invertido
+//map() - recebe callback como parâmetro e devolve um novo array
 
 var myArray = [1,2,3];
 var dobroDoArray = myArray.map(function(parametro){
